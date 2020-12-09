@@ -9,12 +9,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class CalculatorTest {
-	
-	//Aufgabe 1
+
+	// Aufgabe 1
 
 	private Calculator calc;
 
-	// returns the current result of the calculator instance
+	// helper method: returns the current result of the calculator instance
 	private double reflectionGetResult() {
 		Field field;
 		try {
@@ -23,6 +23,18 @@ class CalculatorTest {
 			return (double) field.get(calc);
 		} catch (Exception e) {
 			return 0.0;
+		}
+	}
+
+	// helper method: sets needed value to the calculator instance
+	private void reflectionSetValue(double value) {
+		Field field;
+		try {
+			field = calc.getClass().getDeclaredField("value");
+			field.setAccessible(true);
+			field.set(calc, value);
+		} catch (Exception e) {
+			// ignore
 		}
 	}
 
@@ -42,14 +54,12 @@ class CalculatorTest {
 	public void tearDown() throws Exception {
 	}
 
+	// why does this method fail?
 	@Test
-	public void testGetResult()
-			throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
+	public void testGetResult() {
 		// given
 		calc = new Calculator();
-		final Field field = calc.getClass().getDeclaredField("value");
-		field.setAccessible(true);
-		field.set(calc, 15.5);
+		reflectionSetValue(15.5);
 
 		// when
 		double actual = calc.getResult();
@@ -60,9 +70,9 @@ class CalculatorTest {
 
 	@Test
 	public void testAdd() {
-		//given
+		// given
 		calc = new Calculator();
-		
+
 		// when
 		calc.add(1);
 		calc.add(7);
@@ -72,78 +82,56 @@ class CalculatorTest {
 		assertEquals(16.2, reflectionGetResult());
 	}
 
-	//to be implemented
+	// to be implemented
 	@Test
 	public void testSubtract() {
 		fail("Not yet implemented");
 	}
 
-	//to be implemented
+	// to be implemented
 	@Test
 	public void testMultiply() {
 		fail("Not yet implemented");
 	}
 
-	//to be implemented
+	// to be implemented
 	@Test
 	public void testDivideBy() {
 		fail("Not yet implemented");
 	}
-	
-	//to be implemented
-	//hint: the "infinity"-value of a double variable can be accessed via the class-constant "Double.POSITIVE_INFINITY"
+
+	// to be implemented
+	// hint: the "infinity"-value of a double variable can be accessed via the
+	// class-constant "Double.POSITIVE_INFINITY"
 	@Test
 	public void testDivideByZero() {
 		fail("Not yet implemented");
 	}
-	
-	
-	
-	
-	
-	
-	//Aufgabe 2
+
+	// Aufgabe 2
 	/*
-	@Test
-	public void convert1ToRoman() {
-		//when
-		
-		//then
-	}
-	
-	@Test
-	public void convert4ToRoman() {
-		//when
-		
-		//then
-	}
-	
-	@Test
-	public void convert5ToRoman() {
-		//when
-		
-		//then
-	}
-	
-	@Test
-	public void convert10ToRoman() {
-		//when
-		
-		//then
-	}
-	
-	@Test
-	public void convert56ToRoman() {
-		//when
-		
-		//then
-	}
-	
-	@Test
-	public void convert127ToRoman() {
-		//when
-		
-		//then
-	}
-	*/
+	 * @Test public void convert1ToRoman() { //when
+	 * 
+	 * //then }
+	 * 
+	 * @Test public void convert4ToRoman() { //when
+	 * 
+	 * //then }
+	 * 
+	 * @Test public void convert5ToRoman() { //when
+	 * 
+	 * //then }
+	 * 
+	 * @Test public void convert10ToRoman() { //when
+	 * 
+	 * //then }
+	 * 
+	 * @Test public void convert56ToRoman() { //when
+	 * 
+	 * //then }
+	 * 
+	 * @Test public void convert127ToRoman() { //when
+	 * 
+	 * //then }
+	 */
 }

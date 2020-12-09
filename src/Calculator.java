@@ -1,15 +1,14 @@
 public class Calculator {
-	
-	//Aufgabe 1
+
+	// Aufgabe 1
 
 	private double value;
-	 
 
-	//to be fixed
+	// to be fixed
 	public double getResult() {
 		return 1;
 	}
-	
+
 	public void add(double addend) {
 		this.value += addend;
 	}
@@ -22,21 +21,16 @@ public class Calculator {
 		this.value *= multiplier;
 	}
 
-	//to be implemented
+	// to be implemented
 	public void divideBy(double divisor) {
 
 	}
+
+	// Aufgabe 2
 	
-	
-	
-	
-	
-	
-	//Aufgabe 2
 	/*
-	//to be implemented
-	public String convertNumeralToRoman(int numeral) {
-        return "";
-	}
-	*/
+	  //to be implemented 
+	  public String convertNumeralToRoman(int numeral) { 
+	  }
+	 */
 }
