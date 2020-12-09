@@ -109,29 +109,9 @@ class CalculatorTest {
 	}
 
 	// Aufgabe 2
-	/*
-	 * @Test public void convert1ToRoman() { //when
-	 * 
-	 * //then }
-	 * 
-	 * @Test public void convert4ToRoman() { //when
-	 * 
-	 * //then }
-	 * 
-	 * @Test public void convert5ToRoman() { //when
-	 * 
-	 * //then }
-	 * 
-	 * @Test public void convert10ToRoman() { //when
-	 * 
-	 * //then }
-	 * 
-	 * @Test public void convert56ToRoman() { //when
-	 * 
-	 * //then }
-	 * 
-	 * @Test public void convert127ToRoman() { //when
-	 * 
-	 * //then }
-	 */
+	//implement test-methods for the convertNumeralToRoman method.
+	//please make sure to write enough tests to test all the different types of roman "numbers".
+	//-> at least 6 Tests. Follow the given-when-then pattern.
+	//example test-name "convert4ToRoman" -> would expect the input "4" and the output "IV".
+	
 }

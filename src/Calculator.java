@@ -30,6 +30,7 @@ public class Calculator {
 	
 	/*
 	  //to be implemented 
+	  //implement the test-methods first!!!
 	  public String convertNumeralToRoman(int numeral) { 
 	  }
 	 */
